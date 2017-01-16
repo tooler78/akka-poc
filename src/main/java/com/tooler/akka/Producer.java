@@ -1,7 +1,6 @@
 package com.tooler.akka;
 
 import akka.actor.*;
-import scala.concurrent.Future;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +19,7 @@ public class Producer {
             TimeUnit.MILLISECONDS.sleep(10);
         }
 
-        final Future<Terminated> future = system.terminate();
+        system.terminate();
         System.out.println("===== Finished producing & sending numbers 1 to 10");
     }
 }
